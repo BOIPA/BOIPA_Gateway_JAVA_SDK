@@ -1,4 +1,4 @@
-# BOIPA-GATEWAY-JAVA-SDK
+# BOIPA-Gateway-JAVA-SDK
 This  library provides integration access to the BOIPA Gateway.
 
 ## Quick Start
