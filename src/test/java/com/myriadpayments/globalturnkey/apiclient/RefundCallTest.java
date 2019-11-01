@@ -13,7 +13,7 @@ import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamExcepti
 import com.myriadpayments.globalturnkey.config.ApplicationConfig;
 import com.myriadpayments.globalturnkey.config.TestConfig;
 
-public class RefundCallTest {
+public class RefundCallTest extends BaseTest {
 
 	private static ApplicationConfig config;
 

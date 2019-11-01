@@ -10,7 +10,7 @@ import com.myriadpayments.globalturnkey.apiclient.exception.PostToApiException;
 import com.myriadpayments.globalturnkey.config.ApplicationConfig;
 import com.myriadpayments.globalturnkey.config.NetworkFailConfig;
 
-public class NetworkingFailTest {
+public class NetworkingFailTest extends  BaseTest{
 
 	private static ApplicationConfig config;
 

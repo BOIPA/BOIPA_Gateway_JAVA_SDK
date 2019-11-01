@@ -3,10 +3,12 @@ package com.myriadpayments.globalturnkey.apiclient;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.HashMap;
+
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -229,7 +231,7 @@ public abstract class ApiCall {
 					outputWriter.println("error during the action call:");
 					outputWriter.println(actionResponse.toString(4));
 
-					throw new ActionCallException();
+					throw new ActionCallException(actionResponse.toString());
 
 				}
 
@@ -281,4 +283,18 @@ public abstract class ApiCall {
 		}
 	}
 
+	protected void mandatoryValidation(final Map<String, String> inputParams, final Set<String> requiredParams ){
+		for (final Map.Entry<String, String> entry : inputParams.entrySet()) {
+
+			if ((entry.getValue() != null) && !entry.getValue().trim().isEmpty()) {
+				requiredParams.remove(entry.getKey());
+			}
+
+		}
+
+		if (!requiredParams.isEmpty()) {
+			throw new RequiredParamException(requiredParams);
+		}
+
+	}
 }

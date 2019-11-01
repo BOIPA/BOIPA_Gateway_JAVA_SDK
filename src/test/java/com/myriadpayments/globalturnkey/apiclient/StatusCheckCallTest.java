@@ -15,7 +15,7 @@ import com.myriadpayments.globalturnkey.apiclient.exception.ActionCallException;
 import com.myriadpayments.globalturnkey.config.ApplicationConfig;
 import com.myriadpayments.globalturnkey.config.TestConfig;
 
-public class StatusCheckCallTest {
+public class StatusCheckCallTest extends BaseTest {
 
 	private static ApplicationConfig config;
 
@@ -31,22 +31,15 @@ public class StatusCheckCallTest {
 	public void noExTestCall() {
 
 		// TOKENIZE
-		final Map<String, String> tokenizeParams = new HashMap<>();
-		tokenizeParams.put("number", "5454545454545454");
-		tokenizeParams.put("nameOnCard", "John Doe");
-		tokenizeParams.put("expiryMonth", "12");
-		tokenizeParams.put("expiryYear", "2018");
+		final Map<String, String> tokenizeParams = super.buildTokenizeParam();
 
 		final TokenizeCall tokenize = new TokenizeCall(config, tokenizeParams, null);
 		final JSONObject tokenizeCall = tokenize.execute();
 
 		// AUTH
 		final Map<String, String> authParams = new HashMap<>();
+		super.addCommonParams(authParams);
 		authParams.put("amount", "20.0");
-		authParams.put("channel", Channel.ECOM.getCode());
-		authParams.put("country", CountryCode.GB.getCode());
-		authParams.put("currency", CurrencyCode.EUR.getCode());
-		authParams.put("paymentSolutionId", "500");
 		authParams.put("customerId", tokenizeCall.getString("customerId"));
 		authParams.put("specinCreditCardToken", tokenizeCall.getString("cardToken"));
 		authParams.put("specinCreditCardCVV", "111");

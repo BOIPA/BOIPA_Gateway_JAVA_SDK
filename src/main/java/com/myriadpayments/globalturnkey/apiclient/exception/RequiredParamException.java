@@ -12,7 +12,7 @@ public class RequiredParamException extends SDKException {
 	private final Set<String> missingFields;
 
 	public RequiredParamException(Set<String> missingFields) {
-		super();
+		super(missingFields.toString());
 		this.missingFields = missingFields;
 	}
 

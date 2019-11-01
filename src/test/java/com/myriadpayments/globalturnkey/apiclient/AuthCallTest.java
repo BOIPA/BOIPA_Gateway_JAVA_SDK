@@ -18,7 +18,7 @@ import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamExcepti
 import com.myriadpayments.globalturnkey.config.ApplicationConfig;
 import com.myriadpayments.globalturnkey.config.TestConfig;
 
-public class AuthCallTest {
+public class AuthCallTest extends BaseTest {
 
 	private static ApplicationConfig config;
 
@@ -33,21 +33,14 @@ public class AuthCallTest {
 	@Test
 	public void noExTestCall() {
 
-		final Map<String, String> tokenizeParams = new HashMap<>();
-		tokenizeParams.put("number", "5454545454545454");
-		tokenizeParams.put("nameOnCard", "John Doe");
-		tokenizeParams.put("expiryMonth", "12");
-		tokenizeParams.put("expiryYear", "2018");
+		final Map<String, String> tokenizeParams = super.buildTokenizeParam();
 
 		final TokenizeCall tokenize = new TokenizeCall(config, tokenizeParams, null);
 		final JSONObject tokenizeCall = tokenize.execute();
 
 		final Map<String, String> authParams = new HashMap<>();
+		super.addCommonParams(authParams);
 		authParams.put("amount", "20.0");
-		authParams.put("channel", Channel.ECOM.getCode());
-		authParams.put("country", CountryCode.GB.getCode());
-		authParams.put("currency", CurrencyCode.EUR.getCode());
-		authParams.put("paymentSolutionId", "500");
 		authParams.put("customerId", tokenizeCall.getString("customerId"));
 		authParams.put("specinCreditCardToken", tokenizeCall.getString("cardToken"));
 		authParams.put("specinCreditCardCVV", "111");
@@ -63,32 +56,28 @@ public class AuthCallTest {
 	}
 
 	/**
-	 *  able to get the token, but it is invalid
+	 *  able to get the token,
 	 */
-	@Test(expected = ActionCallException.class)
-	public void tokenAcqButInvalidTestCall() {
+	@Test
+	public void redirectionResponseTestCall() {
 
-		final Map<String, String> tokenizeParams = new HashMap<>();
-		tokenizeParams.put("number", "5454545454545454");
-		tokenizeParams.put("nameOnCard", "John Doe");
-		tokenizeParams.put("expiryMonth", "12");
-		tokenizeParams.put("expiryYear", "2010"); // past date
+		final Map<String, String> tokenizeParams = super.buildTokenizeParam();
 
 		final TokenizeCall tokenize = new TokenizeCall(config, tokenizeParams, null);
 		final JSONObject tokenizeCall = tokenize.execute();
 
 		final Map<String, String> authParams = new HashMap<>();
+		super.addCommonParams(authParams);
 		authParams.put("amount", "20.0");
-		authParams.put("channel", Channel.ECOM.getCode());
-		authParams.put("country", CountryCode.GB.getCode());
-		authParams.put("currency", CurrencyCode.EUR.getCode());
-		authParams.put("paymentSolutionId", "500");
 		authParams.put("customerId", tokenizeCall.getString("customerId"));
 		authParams.put("specinCreditCardToken", tokenizeCall.getString("cardToken"));
 		authParams.put("specinCreditCardCVV", "111");
 
 		final AuthCall call = new AuthCall(config, authParams, null);
-		call.execute();
+
+		JSONObject result = call.execute();
+		Assert.assertEquals(result.get("result"), "redirection");
+
 
 	}
 
@@ -103,7 +92,7 @@ public class AuthCallTest {
 			final Map<String, String> inputParams = new HashMap<>();
 			inputParams.put("amount", "20.0");
 			inputParams.put("channel", Channel.ECOM.getCode());
-			inputParams.put("country", CountryCode.GB.getCode());
+			inputParams.put("country", CountryCode.PL.getCode());
 			// inputParams.put("currency", CurrencyCode.EUR.getCode());
 			inputParams.put("paymentSolutionId", "500");
 			inputParams.put("customerId", "8Gii57iYNVSd27xnFZzR");

@@ -10,5 +10,7 @@ public class ActionCallException extends SDKException {
 	public ActionCallException() {
 		super();
 	}
-
+	public ActionCallException(String msg) {
+		super(msg);
+	}
 }

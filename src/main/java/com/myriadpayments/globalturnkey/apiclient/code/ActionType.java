@@ -11,7 +11,8 @@ public enum ActionType {
     PURCHASE("PURCHASE"),
     REFUND("REFUND"),
     GET_AVAILABLE_PAYSOLS("GET_AVAILABLE_PAYSOLS"),
-    STATUS_CHECK("STATUS_CHECK");
+    STATUS_CHECK("STATUS_CHECK"),
+    VERIFY("VERIFY");
 
     private final String code;
 

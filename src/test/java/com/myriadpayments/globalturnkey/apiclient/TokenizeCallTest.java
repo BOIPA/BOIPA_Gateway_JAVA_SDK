@@ -15,7 +15,7 @@ import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamExcepti
 import com.myriadpayments.globalturnkey.config.ApplicationConfig;
 import com.myriadpayments.globalturnkey.config.TestConfig;
 
-public class TokenizeCallTest {
+public class TokenizeCallTest extends BaseTest{
 
 	private static ApplicationConfig config;
 
@@ -30,11 +30,7 @@ public class TokenizeCallTest {
 	@Test
 	public void noExTestCall() {
 
-		final Map<String, String> inputParams = new HashMap<>();
-		inputParams.put("number", "5454545454545454");
-		inputParams.put("nameOnCard", "John Doe");
-		inputParams.put("expiryYear", "2017");
-		inputParams.put("expiryMonth", "12");
+		final Map<String, String> inputParams = super.buildTokenizeParam();
 
 		final TokenizeCall call = new TokenizeCall(config, inputParams, null);
 		JSONObject result = call.execute();

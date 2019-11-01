@@ -17,7 +17,9 @@ import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamExcepti
 import com.myriadpayments.globalturnkey.config.ApplicationConfig;
 import com.myriadpayments.globalturnkey.config.TestConfig;
 
-public class PurchaseCallTest {
+public class PurchaseCallTest extends  BaseTest{
+
+	private String SAMPLE_TX_ID = "TX_ID_OF_THE_FIRST_TRANSACTOIN";
 
 	private static ApplicationConfig config;
 
@@ -33,22 +35,15 @@ public class PurchaseCallTest {
 	public void noExTestCall() {
 
 		// TOKENIZE
-		final Map<String, String> tokenizeParams = new HashMap<>();
-		tokenizeParams.put("number", "5454545454545454");
-		tokenizeParams.put("nameOnCard", "John Doe");
-		tokenizeParams.put("expiryMonth", "12");
-		tokenizeParams.put("expiryYear", "2018");
+		final Map<String, String> tokenizeParams = super.buildTokenizeParam();
 
 		final TokenizeCall tokenize = new TokenizeCall(config, tokenizeParams, null);
 		final JSONObject tokenizeCall = tokenize.execute();
 
 		// PURCHASE
 		final Map<String, String> purchaseParams = new HashMap<>();
+		super.addCommonParams(purchaseParams);
 		purchaseParams.put("amount", "20.0");
-		purchaseParams.put("channel", Channel.ECOM.getCode());
-		purchaseParams.put("country", CountryCode.GB.getCode());
-		purchaseParams.put("currency", CurrencyCode.EUR.getCode());
-		purchaseParams.put("paymentSolutionId", "500");
 		purchaseParams.put("customerId", tokenizeCall.getString("customerId"));
 		purchaseParams.put("specinCreditCardToken", tokenizeCall.getString("cardToken"));
 		purchaseParams.put("specinCreditCardCVV", "111");
@@ -89,5 +84,72 @@ public class PurchaseCallTest {
 
 		}
 	}
+
+	@Test
+	public void CardOnFileFirstTestCall(){
+		// TOKENIZE
+		final Map<String, String> tokenizeParams = super.buildTokenizeParam();
+
+
+		final TokenizeCall tokenize = new TokenizeCall(config, tokenizeParams, null);
+		final JSONObject tokenizeCall = tokenize.execute();
+
+		// PURCHASE (CardOnFile)
+		final Map<String, String> purchaseParams = new HashMap<>();
+		super.addCommonParams(purchaseParams);
+		purchaseParams.put("amount", "20.0");
+		purchaseParams.put("customerId", tokenizeCall.getString("customerId"));
+		purchaseParams.put("specinCreditCardToken", tokenizeCall.getString("cardToken"));
+		purchaseParams.put("specinCreditCardCVV", "111");
+
+		final PurchaseCall call = new PurchaseCall(config, purchaseParams, null, PurchaseCall.SUB_ACTION_COF_FIRST);
+		JSONObject result = call.execute();
+
+		// note that any error will cause the throwing of some kind of SDKException (which extends RuntimeException)
+		// still we make an assertNotNull
+
+		Assert.assertNotNull(result);
+	}
+
+
+
+	@Test
+	public void CardOnFileRecurringTestCall(){
+
+		/********** Replace the merchantTxId with the transaction id from the CardOnFileFirstTestCall test case ***/
+		String merchantTxId = SAMPLE_TX_ID;
+//		String merchantTxId = "u8ALJCxdtgpRuCAaOdjZ";
+		if(SAMPLE_TX_ID.equals(merchantTxId)) {
+			System.out.println("**** Warning: to run recurring payment, please assign the merchantTxId of the 'First' transaction to variable  [ merchantTxId ] ");
+			return;
+		}
+
+
+		// TOKENIZE
+		final Map<String, String> tokenizeParams = super.buildTokenizeParam();
+
+
+		final TokenizeCall tokenize = new TokenizeCall(config, tokenizeParams, null);
+		final JSONObject tokenizeCall = tokenize.execute();
+
+		// PURCHASE (CardOnFile)
+		final Map<String, String> purchaseParams = new HashMap<>();
+		super.addCommonParams(purchaseParams);
+		purchaseParams.put("amount", "20.0");
+		purchaseParams.put("customerId", tokenizeCall.getString("customerId"));
+		purchaseParams.put("specinCreditCardToken", tokenizeCall.getString("cardToken"));
+		purchaseParams.put("specinCreditCardCVV", "111");
+		purchaseParams.put("cardOnFileInitialTransactionId",merchantTxId);
+
+		final PurchaseCall call = new PurchaseCall(config, purchaseParams, null,PurchaseCall.SUB_ACTION_COF_RECURRING);
+		JSONObject result = call.execute();
+
+		// note that any error will cause the throwing of some kind of SDKException (which extends RuntimeException)
+		// still we make an assertNotNull
+
+		Assert.assertNotNull(result);
+		Assert.assertEquals("redirection", result.getString("result"));
+	}
+
 
 }
