@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient.exception;
+package com.evopayments.turnkey.apiclient.exception;
 
 /**
  * Error in (around) the outgoing (toward the API server) HTTP client call (most likely: failed HTTP request, failed response parsing, failed request body creation)

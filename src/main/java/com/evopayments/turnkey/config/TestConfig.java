@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.config;
+package com.evopayments.turnkey.config;
 
 
 public class TestConfig extends ApplicationConfig {

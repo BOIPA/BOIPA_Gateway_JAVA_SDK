@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.web.servlet.sample.callback;
+package com.evopayments.turnkey.web.servlet.sample.callback;
 
 import java.io.IOException;
 import java.util.Map;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.myriadpayments.globalturnkey.web.servlet.sample.s2s.AbstractServlet;
+import com.evopayments.turnkey.web.servlet.sample.s2s.AbstractServlet;
 
 /**
  * When an operation is completed (successfully or not), a notification is sent to inform the

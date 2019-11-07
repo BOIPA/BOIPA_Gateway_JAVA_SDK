@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.config;
+package com.evopayments.turnkey.config;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -19,12 +19,12 @@ abstract public class ApplicationConfig {
 		// detailed logging for the API HTTP requests/responses (optional)
 		
 		// USE
-		// -Dglobal-turnkey-sdk-http-log=none
+		// -Devopayments-turnkey-sdk-http-log=none
 		// OR
-		// -Dglobal-turnkey-sdk-http-log=verbose
+		// -Devopayments-turnkey-sdk-http-log=verbose
 		// (none is the default)
 
-		if (System.getProperty("global-turnkey-sdk-http-log", "none").equals("verbose")) {
+		if (System.getProperty("evopayments-turnkey-sdk-http-log", "none").equals("verbose")) {
 			System.setProperty("org.apache.commons.logging.Log", "org.apache.commons.logging.impl.SimpleLog");
 			System.setProperty("org.apache.commons.logging.simplelog.showdatetime", "true");
 			System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.http.wire", "DEBUG");
@@ -35,12 +35,12 @@ abstract public class ApplicationConfig {
 	public static ApplicationConfig getInstanceBasedOnSysProp() {
 
 		// USE
-		// -Dglobal-turnkey-sdk-config=test
+		// -Devopayments-turnkey-sdk-config=test
 		// OR
-		// -Dglobal-turnkey-sdk-config=production
+		// -Devopayments-turnkey-sdk-config=production
 		// (test is the default)
 
-		final String configParamStr = System.getProperty("global-turnkey-sdk-config", "test");
+		final String configParamStr = System.getProperty("evopayments-turnkey-sdk-config", "test");
 
 		ApplicationConfig config;
 

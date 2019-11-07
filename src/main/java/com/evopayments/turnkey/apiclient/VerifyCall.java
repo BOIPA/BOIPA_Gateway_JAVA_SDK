@@ -1,7 +1,7 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
-import com.myriadpayments.globalturnkey.apiclient.code.ActionType;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.apiclient.code.ActionType;
+import com.evopayments.turnkey.config.ApplicationConfig;
 
 import java.io.PrintWriter;
 import java.util.Map;

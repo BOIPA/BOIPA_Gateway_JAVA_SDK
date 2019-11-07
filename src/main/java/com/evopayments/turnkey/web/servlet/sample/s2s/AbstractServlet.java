@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.web.servlet.sample.s2s;
+package com.evopayments.turnkey.web.servlet.sample.s2s;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.myriadpayments.globalturnkey.apiclient.exception.ActionCallException;
-import com.myriadpayments.globalturnkey.apiclient.exception.GeneralException;
-import com.myriadpayments.globalturnkey.apiclient.exception.PostToApiException;
-import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamException;
-import com.myriadpayments.globalturnkey.apiclient.exception.TokenAcquirationException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.apiclient.exception.ActionCallException;
+import com.evopayments.turnkey.apiclient.exception.GeneralException;
+import com.evopayments.turnkey.apiclient.exception.PostToApiException;
+import com.evopayments.turnkey.apiclient.exception.RequiredParamException;
+import com.evopayments.turnkey.apiclient.exception.TokenAcquirationException;
 
 /**
  * Sample servlet base class

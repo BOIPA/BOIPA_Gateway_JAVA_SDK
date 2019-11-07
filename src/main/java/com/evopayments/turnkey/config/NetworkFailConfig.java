@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.config;
+package com.evopayments.turnkey.config;
 
 /**
  * Intentionally not valid / wrong URLs, can be used for network exception unit tests

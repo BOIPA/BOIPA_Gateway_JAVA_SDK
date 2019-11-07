@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient.code;
+package com.evopayments.turnkey.apiclient.code;
 
 /**
  * ISO-4217 Currency codes

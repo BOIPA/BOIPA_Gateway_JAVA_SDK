@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,9 +6,9 @@ import java.util.Map;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.myriadpayments.globalturnkey.apiclient.exception.PostToApiException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
-import com.myriadpayments.globalturnkey.config.NetworkFailConfig;
+import com.evopayments.turnkey.apiclient.exception.PostToApiException;
+import com.evopayments.turnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.config.NetworkFailConfig;
 
 public class NetworkingFailTest extends  BaseTest{
 

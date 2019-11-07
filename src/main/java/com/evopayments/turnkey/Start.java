@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey;
+package com.evopayments.turnkey;
 
 import java.io.PrintWriter;
 import java.util.HashMap;
@@ -6,23 +6,23 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.evopayments.turnkey.apiclient.code.ActionType;
+import com.evopayments.turnkey.config.ApplicationConfig;
 import org.json.JSONObject;
 
-import com.myriadpayments.globalturnkey.apiclient.AuthCall;
-import com.myriadpayments.globalturnkey.apiclient.CaptureCall;
-import com.myriadpayments.globalturnkey.apiclient.GetAvailablePaymentSolutionsCall;
-import com.myriadpayments.globalturnkey.apiclient.PurchaseCall;
-import com.myriadpayments.globalturnkey.apiclient.RefundCall;
-import com.myriadpayments.globalturnkey.apiclient.StatusCheckCall;
-import com.myriadpayments.globalturnkey.apiclient.TokenizeCall;
-import com.myriadpayments.globalturnkey.apiclient.VoidCall;
-import com.myriadpayments.globalturnkey.apiclient.code.ActionType;
-import com.myriadpayments.globalturnkey.apiclient.exception.ActionCallException;
-import com.myriadpayments.globalturnkey.apiclient.exception.GeneralException;
-import com.myriadpayments.globalturnkey.apiclient.exception.PostToApiException;
-import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamException;
-import com.myriadpayments.globalturnkey.apiclient.exception.TokenAcquirationException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.apiclient.AuthCall;
+import com.evopayments.turnkey.apiclient.CaptureCall;
+import com.evopayments.turnkey.apiclient.GetAvailablePaymentSolutionsCall;
+import com.evopayments.turnkey.apiclient.PurchaseCall;
+import com.evopayments.turnkey.apiclient.RefundCall;
+import com.evopayments.turnkey.apiclient.StatusCheckCall;
+import com.evopayments.turnkey.apiclient.TokenizeCall;
+import com.evopayments.turnkey.apiclient.VoidCall;
+import com.evopayments.turnkey.apiclient.exception.ActionCallException;
+import com.evopayments.turnkey.apiclient.exception.GeneralException;
+import com.evopayments.turnkey.apiclient.exception.PostToApiException;
+import com.evopayments.turnkey.apiclient.exception.RequiredParamException;
+import com.evopayments.turnkey.apiclient.exception.TokenAcquirationException;
 
 /**
  * Command line version

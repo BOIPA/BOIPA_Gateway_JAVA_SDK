@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.evopayments.turnkey.apiclient.code.ActionType;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -20,14 +21,13 @@ import org.apache.http.client.fluent.Request;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.json.JSONObject;
 
-import com.myriadpayments.globalturnkey.apiclient.code.ActionType;
-import com.myriadpayments.globalturnkey.apiclient.exception.ActionCallException;
-import com.myriadpayments.globalturnkey.apiclient.exception.GeneralException;
-import com.myriadpayments.globalturnkey.apiclient.exception.PostToApiException;
-import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamException;
-import com.myriadpayments.globalturnkey.apiclient.exception.SDKException;
-import com.myriadpayments.globalturnkey.apiclient.exception.TokenAcquirationException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.apiclient.exception.ActionCallException;
+import com.evopayments.turnkey.apiclient.exception.GeneralException;
+import com.evopayments.turnkey.apiclient.exception.PostToApiException;
+import com.evopayments.turnkey.apiclient.exception.RequiredParamException;
+import com.evopayments.turnkey.apiclient.exception.SDKException;
+import com.evopayments.turnkey.apiclient.exception.TokenAcquirationException;
+import com.evopayments.turnkey.config.ApplicationConfig;
 
 /**
  * Intelligent Paymanents API calls (for API version: 1.7) base class

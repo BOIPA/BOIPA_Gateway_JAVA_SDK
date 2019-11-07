@@ -1,12 +1,12 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.myriadpayments.globalturnkey.apiclient.code.ActionType;
-import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.apiclient.code.ActionType;
+import com.evopayments.turnkey.apiclient.exception.RequiredParamException;
+import com.evopayments.turnkey.config.ApplicationConfig;
 
 /**
  * Returns the status of an already issued payment transaction, as such it doesn’t actually generate a new transaction

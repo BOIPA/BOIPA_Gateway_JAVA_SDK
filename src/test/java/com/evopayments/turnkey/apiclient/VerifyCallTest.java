@@ -1,9 +1,9 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
-import com.myriadpayments.globalturnkey.apiclient.code.Channel;
-import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
-import com.myriadpayments.globalturnkey.config.TestConfig;
+import com.evopayments.turnkey.apiclient.code.Channel;
+import com.evopayments.turnkey.apiclient.exception.RequiredParamException;
+import com.evopayments.turnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.config.TestConfig;
 import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.BeforeClass;

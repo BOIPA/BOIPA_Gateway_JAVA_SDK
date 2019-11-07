@@ -1,8 +1,8 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
-import com.myriadpayments.globalturnkey.apiclient.code.Channel;
-import com.myriadpayments.globalturnkey.apiclient.code.CountryCode;
-import com.myriadpayments.globalturnkey.apiclient.code.CurrencyCode;
+import com.evopayments.turnkey.apiclient.code.Channel;
+import com.evopayments.turnkey.apiclient.code.CountryCode;
+import com.evopayments.turnkey.apiclient.code.CurrencyCode;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient.exception;
+package com.evopayments.turnkey.apiclient.exception;
 
 /**
  * Base class for the SDK exceptions

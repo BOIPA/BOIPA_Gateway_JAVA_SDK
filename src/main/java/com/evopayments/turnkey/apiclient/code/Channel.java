@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient.code;
+package com.evopayments.turnkey.apiclient.code;
 
 /**
  * Type of channels

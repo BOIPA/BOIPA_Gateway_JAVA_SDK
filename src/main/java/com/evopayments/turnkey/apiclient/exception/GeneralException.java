@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient.exception;
+package com.evopayments.turnkey.apiclient.exception;
 
 /**
  * Other, not specified error in the SDK code

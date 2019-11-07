@@ -1,4 +1,4 @@
-package com.myriadpayments.globalturnkey.apiclient;
+package com.evopayments.turnkey.apiclient;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,10 +10,10 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.myriadpayments.globalturnkey.apiclient.exception.ActionCallException;
-import com.myriadpayments.globalturnkey.apiclient.exception.RequiredParamException;
-import com.myriadpayments.globalturnkey.config.ApplicationConfig;
-import com.myriadpayments.globalturnkey.config.TestConfig;
+import com.evopayments.turnkey.apiclient.exception.ActionCallException;
+import com.evopayments.turnkey.apiclient.exception.RequiredParamException;
+import com.evopayments.turnkey.config.ApplicationConfig;
+import com.evopayments.turnkey.config.TestConfig;
 
 public class TokenizeCallTest extends BaseTest{
 
