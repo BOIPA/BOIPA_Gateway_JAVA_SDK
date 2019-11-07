@@ -1,5 +1,5 @@
 # BOIPA-JAVA-SDK
-This  library provides integration access to the BOIPA Api.
+This  library provides integration access to the BOIPA Payment Gateway.
 
 ## Quick Start
 
