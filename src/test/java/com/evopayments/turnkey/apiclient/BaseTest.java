@@ -26,8 +26,8 @@ public class BaseTest {
 
     protected  void addCommonParams(Map<String, String> authParams){
         authParams.put("channel", Channel.ECOM.getCode());
-        authParams.put("country", CountryCode.PL.getCode());
-        authParams.put("currency", CurrencyCode.PLN.getCode());
+        authParams.put("country", CountryCode.IE.getCode());
+        authParams.put("currency", CurrencyCode.EUR.getCode());
         authParams.put("paymentSolutionId", "500");
     }
 }
