@@ -49,7 +49,7 @@ public class VoidCallTest extends BaseTest{
 		// VOID
 		final Map<String, String> inputParams = new HashMap<>();
 		inputParams.put("originalMerchantTxId", authCall.getString("merchantTxId"));
-		inputParams.put("country", "FR");
+		inputParams.put("country", "IE");
 		inputParams.put("currency", "EUR");
 
 		final VoidCall call = new VoidCall(config, inputParams, null);
