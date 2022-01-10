@@ -67,7 +67,7 @@ public class PurchaseCallTest extends  BaseTest{
 			final Map<String, String> inputParams = new HashMap<>();
 			inputParams.put("amount", "20.0");
 			inputParams.put("channel", Channel.ECOM.getCode());
-			// inputParams.put("country", CountryCode.GB.getCode());
+			// inputParams.put("country", CountryCode.IE.getCode());
 			// inputParams.put("currency", CurrencyCode.EUR.getCode());
 			inputParams.put("paymentSolutionId", "500");
 			inputParams.put("customerId", "8Gii57iYNVSd27xnFZzR");
