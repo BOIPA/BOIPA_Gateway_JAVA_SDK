@@ -41,7 +41,7 @@ public class RefundCallTest extends BaseTest {
 	// final Map<String, String> authParams = new HashMap<>();
 	// authParams.put("amount", "20.0");
 	// authParams.put("channel", Channel.ECOM.getCode());
-	// authParams.put("country", CountryCode.GB.getCode());
+	// authParams.put("country", CountryCode.IE.getCode());
 	// authParams.put("currency", CurrencyCode.EUR.getCode());
 	// authParams.put("paymentSolutionId", "500");
 	// authParams.put("customerId", tokenizeCall.getString("customerId"));
@@ -63,7 +63,7 @@ public class RefundCallTest extends BaseTest {
 	// final Map<String, String> inputParams = new HashMap<>();
 	// inputParams.put("originalMerchantTxId", capture.getString("originalMerchantTxId"));
 	// inputParams.put("amount", "20.0");
-	// inputParams.put("country", "FR");
+	// inputParams.put("country", "IE");
 	// inputParams.put("currency", "EUR");
 	//
 	// final RefundCall call = new RefundCall(config, inputParams, null);
@@ -87,7 +87,7 @@ public class RefundCallTest extends BaseTest {
 			final Map<String, String> inputParams = new HashMap<>();
 			// inputParams.put("originalMerchantTxId", capture.getString("originalMerchantTxId")); // left out field
 			inputParams.put("amount", "20.0");
-			inputParams.put("country", "FR");
+			inputParams.put("country", "IE");
 			// inputParams.put("currency", "EUR"); // left out field
 
 			final RefundCall call = new RefundCall(config, inputParams, null);
