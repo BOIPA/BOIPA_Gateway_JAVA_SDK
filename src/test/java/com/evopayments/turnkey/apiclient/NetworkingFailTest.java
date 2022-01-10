@@ -26,7 +26,7 @@ public class NetworkingFailTest extends  BaseTest{
 	public void networkingExExpTestCall() {
 
 		final Map<String, String> inputParams = new HashMap<>();
-		inputParams.put("country", "FR");
+		inputParams.put("country", "IE");
 		inputParams.put("currency", "EUR");
 
 		final GetAvailablePaymentSolutionsCall call = new GetAvailablePaymentSolutionsCall(config, inputParams, null);
