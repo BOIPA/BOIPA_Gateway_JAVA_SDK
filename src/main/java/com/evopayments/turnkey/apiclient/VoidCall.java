@@ -58,7 +58,8 @@ public class VoidCall extends ApiCall {
 		tokenParams.put("action", getActionType().getCode());
 		tokenParams.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		tokenParams.put("allowOriginUrl", config.getProperty(ALLOW_ORIGIN_URL_PROP_KEY));
-		tokenParams.put("amount", inputParams.get("amount"));
+
+		tokenParams.putAll(inputParams); // Pass all inputParams to Session
 
 		return tokenParams;
 	}

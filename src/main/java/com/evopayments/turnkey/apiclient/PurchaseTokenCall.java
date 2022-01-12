@@ -59,13 +59,10 @@ public class PurchaseTokenCall extends ApiCall {
 		tokenParams.put("action", getActionType().getCode());
 		tokenParams.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		tokenParams.put("allowOriginUrl", config.getProperty(ALLOW_ORIGIN_URL_PROP_KEY));
-		tokenParams.put("channel", inputParams.get("channel"));
-		tokenParams.put("amount", inputParams.get("amount"));
-		tokenParams.put("currency", inputParams.get("currency"));
-		tokenParams.put("country", inputParams.get("country"));
-		tokenParams.put("paymentSolutionId", inputParams.get("paymentSolutionId"));
 		tokenParams.put("merchantNotificationUrl", config.getProperty(MERCHANT_NOTIFICATION_URL_PROP_KEY));
 		tokenParams.put("merchantLandingPageUrl", config.getProperty(MERCHANT_LANDING_PAGE_URL_PROP_KEY));
+
+		tokenParams.putAll(inputParams); // Pass all inputParams to Session
 
 		return tokenParams;
 	}

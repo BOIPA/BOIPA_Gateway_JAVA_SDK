@@ -51,13 +51,15 @@ public class GetAvailablePaymentSolutionsCall extends ApiCall {
 	@Override
 	protected Map<String, String> getTokenParams(final Map<String, String> inputParams) {
 
-		final Map<String, String> tokenParams = new HashMap<>(inputParams); // all of the input params plus the ones below
+		final Map<String, String> tokenParams = new HashMap<>();
 
 		tokenParams.put("merchantId", config.getProperty(MERCHANT_ID_PROP_KEY));
 		tokenParams.put("password", config.getProperty(PASSWORD_PROP_KEY));
 		tokenParams.put("action", getActionType().getCode());
 		tokenParams.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		tokenParams.put("allowOriginUrl", config.getProperty(ALLOW_ORIGIN_URL_PROP_KEY));
+
+                tokenParams.putAll(inputParams); // Pass all inputParams to Session
 
 		return tokenParams;
 	}

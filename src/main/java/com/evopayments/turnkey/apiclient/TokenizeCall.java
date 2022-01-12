@@ -57,6 +57,13 @@ public class TokenizeCall extends ApiCall {
 		tokenParams.put("action", getActionType().getCode());
 		tokenParams.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		tokenParams.put("allowOriginUrl", config.getProperty(ALLOW_ORIGIN_URL_PROP_KEY));
+                
+                tokenParams.putAll(inputParams); // Pass all inputParams to Session
+
+                // Remmove action params
+                for(String key : Arrays.asList("number", "nameOnCard", "expiryMonth", "expiryYear")) {
+                    tokenParams.remove(key);
+                }
 
 		return tokenParams;
 	}

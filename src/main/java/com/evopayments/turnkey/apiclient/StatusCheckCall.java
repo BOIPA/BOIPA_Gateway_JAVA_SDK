@@ -41,6 +41,8 @@ public class StatusCheckCall extends ApiCall {
 		tokenParams.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		tokenParams.put("allowOriginUrl", config.getProperty(ALLOW_ORIGIN_URL_PROP_KEY));
 
+                tokenParams.putAll(inputParams); // Pass all inputParams to Session
+
 		return tokenParams;
 	}
 
