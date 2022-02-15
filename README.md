@@ -7,7 +7,7 @@ BOIPA Java SDK is a small library/sample of Java code that you can use to quickl
 
 ## Before you Begin
 
-Before using the BOIPA Java SDK you should be familiar with the contents of the [API Specification for Merchants](docs/API-Specification.pdf) document as it describes all fields and their meaning within a given payment transaction.
+Before using the BOIPA Java SDK you should be familiar with the contents of the [API Specification for Merchants](https://github.com/BOIPA/BOIPA_Gateway_JAVA_SDK/blob/master/docs/BOIPA%20Gateway%20-%200%20-%20Overview.pdf) document as it describes all fields and their meaning within a given payment transaction.
 
 ## Setup your Project
 
