@@ -63,7 +63,7 @@ Every payment operation has its own Call Object. To successfully perform any req
 
 All classes are descendants of the _ApiCall_ class.
 
-For more information on payment transactions please check the [API Specification for Merchants](docs/API-Specification.pdf) document.
+For more information on payment transactions please check the [API Specification for Merchants](https://github.com/BOIPA/BOIPA_Gateway_JAVA_SDK/blob/master/docs/BOIPA%20Gateway%20-%200%20-%20Overview.pdf) document.
 
 Some of the possible request/call chains (ie. tokenize -> auth -> capture) can be seen in the unit test to.
 
